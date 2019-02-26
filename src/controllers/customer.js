@@ -9,7 +9,8 @@
 
 
 
-const customerInfo = async (url, token) => {
+const customerInfo = async (token, customerId) => {
+  let url = `https://www.recordstackoverflow.com/api/v1/customers/${customerId}`
   try {
     const response = await fetch(url, {
       method: 'GET',
@@ -26,7 +27,10 @@ const customerInfo = async (url, token) => {
   }
 }
 
-const updateCustomer = async (url, token, info) => {
+const updateCustomer = async (token, customerId, info) => {
+
+  const url = `https://www.recordstackoverflow.com/api/v1/customers/${customerId}`
+
   try {
     const response = await fetch(url, {
       method: 'PUT',

@@ -9,7 +9,8 @@
 
 
 
-const merchantInfo = async (url, token) => {
+const merchantInfo = async (token, merchantId) => {
+  const url = `https://www.recordstackoverflow.com/api/v1/merchants/${merchantId}`
   try {
     const response = await fetch(url, {
       method: 'GET',
@@ -26,7 +27,8 @@ const merchantInfo = async (url, token) => {
   }
 }
 
-const updateMerchant = async (url, token, info) => {
+const updateMerchant = async (token, merchantId, info) => {
+  const url = `https://www.recordstackoverflow.com/api/v1/merchants/${merchantId}`
   try {
     const response = await fetch(url, {
       method: 'PUT',
